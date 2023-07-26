@@ -5,7 +5,7 @@ const MainLayout = ({children}) => {
   return (
     <div className='min-h-screen'>
         <Topbar/>
-        <div>
+        <div> 
         {children}
         </div>
     </div>
