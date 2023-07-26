@@ -4,7 +4,7 @@ import Home from './index';
 test("Home Rendered", () => {
     render(<Home/>);
 
-    const element = screen.getByText(/Maximum Path Sum/i);
+    const element = screen.getByText(/Upload file in .txt file/i);
 
     expect(element).toBeInTheDocument();
 })
