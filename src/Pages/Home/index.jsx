@@ -10,6 +10,7 @@ const Index = () => {
     const [maxSum, setMaxSum] = useState(0)
     const [refArr, setRefArr] = useState([])
 
+
     const ref = useRef()
 
     // Function to calculate the maximum path sum
@@ -55,7 +56,7 @@ const Index = () => {
             for (const i of arr) {
                 const ind = i.indexOf("\r");
                 console.log(ind);
-                if (ind != -1) {
+                if (ind !== -1) {
                     i.splice(ind, 1);
                 }
             }
@@ -68,7 +69,9 @@ const Index = () => {
     }
 
 
-    const tracePath = () => {
+
+
+    useEffect(() => {
         const arr = []
         const arr2 = [{
             row: 0,
@@ -79,7 +82,7 @@ const Index = () => {
         }
 
         for (let i = 0; i < arr.length; i++) {
-            if (i == 0) continue;
+            if (i === 0) continue;
             const obj = arr2[i - 1]
             if (arr[i][obj.col] === 'left') {
                 arr2.push({
@@ -100,12 +103,6 @@ const Index = () => {
             left: ref.current.offsetWidth * 0.5,
             behavior: 'smooth',
         });
-    }
-
-
-
-    useEffect(() => {
-        tracePath()
     }, [chkMainArr])
 
 
