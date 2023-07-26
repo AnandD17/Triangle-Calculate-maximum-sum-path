@@ -27,7 +27,7 @@ const Index = () => {
                 array2[j] += Math.max(array1[j], array1[j + 1]);
                 let max = Math.max(array1[j], array1[j + 1])
                 console.log(max);
-                if (max == array1[j]) {
+                if (max === array1[j]) {
                     chkArr2[j] = 'left'
                 }
                 else {
@@ -81,7 +81,7 @@ const Index = () => {
         for (let i = 0; i < arr.length; i++) {
             if (i == 0) continue;
             const obj = arr2[i - 1]
-            if (arr[i][obj.col] == 'left') {
+            if (arr[i][obj.col] === 'left') {
                 arr2.push({
                     row: i,
                     col: obj.col
@@ -95,18 +95,17 @@ const Index = () => {
             }
         }
         setTracedArr([...arr2])
-        console.log(arr2);
+        window.scrollBy({
+            top: 0,
+            left: ref.current.offsetWidth * 0.5,
+            behavior: 'smooth',
+        });
     }
 
 
 
     useEffect(() => {
         tracePath()
-        window.scrollBy({
-            top: 0,
-            left: ref.current.offsetWidth * 0.5, // Scroll 50% of the window's width to the right
-            behavior: 'smooth', // Use 'auto' for instant scrolling
-        });
     }, [chkMainArr])
 
 
@@ -150,7 +149,7 @@ const Index = () => {
                                     <div className='flex gap-2 mb-2 justify-center' key={index}>
                                         {item.map((i, ind) => {
                                             return (
-                                                <div className={`flex justify-center items-center h-20 w-20 border-black p-2 rounded-lg relative hover:-translate-y-1 transition cursor-pointer tooltip ${tracedArr?.find(s => s?.row == index)?.col == ind ? 'bg-red-200' : 'bg-blue-200'}`} key={ind}>
+                                                <div className={`flex justify-center items-center h-20 w-20 border-black p-2 rounded-lg relative hover:-translate-y-1 transition cursor-pointer tooltip ${tracedArr?.find(s => s?.row === index)?.col === ind ? 'bg-red-200' : 'bg-blue-200'}`} key={ind}>
                                                     {i}
                                                     <span className="tooltiptext p-2 text-sm"> Sum at this point is : {triangleArray[index][ind]}</span>
                                                 </div>
