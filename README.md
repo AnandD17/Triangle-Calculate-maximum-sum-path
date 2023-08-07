@@ -1,6 +1,7 @@
 # Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Description
+Find the possible maximum possible sum path for provide csv file uploaded via frontedn and also tracks the path
 
 ## Available Scripts
 
