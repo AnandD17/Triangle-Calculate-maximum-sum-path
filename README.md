@@ -1,3 +1,3 @@
 # Getting Started with Create React App
 
-## use the below txt file to upload
+Triangle.txt is included in the codebase
